@@ -1,17 +1,19 @@
-'use strict';
+
 
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const mongoose = require("mongoose");
+
 
 const app = express();
 app.use(cors());
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8099;
 
-app.get('/test', (request, response) => {
+app.get('/', (request, response) => {
 
-  response.send('test request received')
+  response.get('test request received')
 
 })
 
