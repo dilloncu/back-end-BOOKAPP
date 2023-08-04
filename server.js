@@ -1,10 +1,12 @@
-require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+require("dotenv").config();
+const bp = require("body-parser");
 
 const app = express();
 app.use(cors());
+app.use(bp.json());
 
 const PORT = process.env.PORT || 8099;
 const Book = require("./models/Books");
